@@ -22,6 +22,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <junit.version>4.13.2</junit.version>
     </properties>
 
     <modules>
@@ -30,6 +31,7 @@
         <module>elegant-dao</module>
         <module>elegant-service</module>
         <module>elegant-model</module>
+        <module>elegant-tools</module>
     </modules>
 
     <dependencyManagement>
@@ -38,7 +40,7 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.13.2</version>
+                <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
         </dependencies>
