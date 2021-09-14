@@ -13,3 +13,10 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 5
+
+swagger:
+  enable: true
+  application-name:
+  application-version: 1.0
+  application-description: hello world
+  try-host: http://127.0.0.1:${server.port}

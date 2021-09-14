@@ -4,6 +4,7 @@ import com.elegant.codes.model.user.User;
 import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,6 +26,14 @@ public class IndexController {
     @ApiOperation("测试获取用户信息接口")
     @PostMapping(value = "/user")
     public User user(@RequestParam(name = "id", required = false) String id){
+        User user = new User();
+        user.setUserName("tom");
+        return user;
+    }
+
+    @ApiOperation("测试获取用户信息接口GET")
+    @GetMapping(value = "/get/user")
+    public User getUser(@RequestParam(name = "id", required = false) String id){
         User user = new User();
         user.setUserName("tom");
         return user;
