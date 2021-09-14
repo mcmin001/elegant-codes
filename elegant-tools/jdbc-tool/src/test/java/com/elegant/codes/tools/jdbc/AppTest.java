@@ -5,6 +5,10 @@ import org.junit.Test;
 public class AppTest {
     @Test
     public void testClass(){
-        //Class.forName()
+        try {
+            Class.forName("");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 }
