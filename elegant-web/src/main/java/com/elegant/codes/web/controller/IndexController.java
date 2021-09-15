@@ -34,8 +34,10 @@ public class IndexController {
     @ApiOperation("测试获取用户信息接口GET")
     @GetMapping(value = "/get/user")
     public User getUser(@RequestParam(name = "id", required = false) String id){
+        logger.info("/get/user called. id={}", id);
         User user = new User();
         user.setUserName("tom");
         return user;
     }
+
 }

@@ -3,10 +3,16 @@
     <!--<Configuration status="WARN" monitorInterval="30"> -->
     <properties>
         <property name="LOG_HOME">logs</property>
+        <Property name="LOG_PATTERN">
+            [%d{yyyy-MM-dd HH:mm:ss.SSS}]-[%t]-[traceId=%X{traceId}]-[%-5level]-[%c{36}:%L]-[%m]%n
+        </Property>
+        <Property name="LOG_PATTERN_ERROR">
+            [%d{yyyy-MM-dd HH:mm:ss.SSS}]-[%t]-[traceId=%X{traceId}]-[%-5level]-[%l:%M]-[%m]%n
+        </Property>
     </properties>
     <Appenders>
         <!--*********************控制台日志***********************-->
-        <Console name="consoleAppender" target="SYSTEM_OUT">
+        <Console name="consoleAppender" target="SYSTEM_OUT" follow="true">
             <!--设置日志格式及颜色-->
             <PatternLayout
                     pattern="%style{%d{ISO8601}}{bright,green} %highlight{%-5level} [%style{%t}{bright,blue}] %style{%C{}}{bright,yellow}: %msg%n%style{%throwable}{red}"
@@ -19,9 +25,7 @@
                      fileName="${LOG_HOME}/all.log"
                      filePattern="${LOG_HOME}/$${date:yyyy-MM}/all-%d{yyyy-MM-dd}-%i.log.gz">
             <!--设置日志格式-->
-            <PatternLayout>
-                <pattern>%d %p %C{} [%t] %m%n</pattern>
-            </PatternLayout>
+            <PatternLayout charset="UTF-8"  pattern="${LOG_PATTERN}"/>
             <Policies>
                 <!-- 设置日志文件切分参数 -->
                 <!--<OnStartupTriggeringPolicy/>-->
@@ -43,9 +47,7 @@
                 <ThresholdFilter level="info" onMatch="DENY" onMismatch="NEUTRAL"/>
             </Filters>
             <!--设置日志格式-->
-            <PatternLayout>
-                <pattern>%d %p %C{} [%t] %m%n</pattern>
-            </PatternLayout>
+            <PatternLayout charset="UTF-8"  pattern="${LOG_PATTERN}"/>
             <Policies>
                 <!-- 设置日志文件切分参数 -->
                 <!--<OnStartupTriggeringPolicy/>-->
@@ -67,9 +69,7 @@
                 <ThresholdFilter level="warn" onMatch="DENY" onMismatch="NEUTRAL"/>
             </Filters>
             <!--设置日志格式-->
-            <PatternLayout>
-                <pattern>%d %p %C{} [%t] %m%n</pattern>
-            </PatternLayout>
+            <PatternLayout charset="UTF-8"  pattern="${LOG_PATTERN}"/>
             <Policies>
             <!--设置日志文件切分参数-->
             <!--<OnStartupTriggeringPolicy/>-->
@@ -91,9 +91,7 @@
                 <ThresholdFilter level="error" onMatch="DENY" onMismatch="NEUTRAL"/>
             </Filters>
             <!--设置日志格式-->
-            <PatternLayout>
-                <pattern>%d %p %C{} [%t] %m%n</pattern>
-            </PatternLayout>
+            <PatternLayout charset="UTF-8"  pattern="${LOG_PATTERN}"/>
             <Policies>
                 <!-- 设置日志文件切分参数 -->
                 <!--<OnStartupTriggeringPolicy/>-->
@@ -111,9 +109,7 @@
                      fileName="${LOG_HOME}/error.log"
                      filePattern="${LOG_HOME}/$${date:yyyy-MM}/error-%d{yyyy-MM-dd}-%i.log.gz">
             <!--设置日志格式-->
-            <PatternLayout>
-                <pattern>%d %p %C{} [%t] %m%n</pattern>
-            </PatternLayout>
+            <PatternLayout charset="UTF-8"  pattern="${LOG_PATTERN}"/>
             <Policies>
                 <!-- 设置日志文件切分参数 -->
                 <!--<OnStartupTriggeringPolicy/>-->
