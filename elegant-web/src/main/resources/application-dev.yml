@@ -5,16 +5,31 @@ server:
   servlet:
     context-path: /elegant
 
-
 spring:
+  # 配置数据源信息
   datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
     url: jdbc:mysql://127.0.0.1:3306/world
     username: root
     password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    type: com.alibaba.druid.pool.DruidDataSource
-    initialSize: 5
 
+  # 配置JPA信息
+  jpa:
+    database: mysql
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    # 设置数据库方言
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+# 配置swagger信息
 swagger:
   enable: true
   application-name:
