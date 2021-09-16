@@ -99,17 +99,7 @@
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <artifactId>elegant-dao</artifactId>
-            <groupId>com.elegant.codes</groupId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
             <artifactId>elegant-service</artifactId>
-            <groupId>com.elegant.codes</groupId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <artifactId>elegant-model</artifactId>
             <groupId>com.elegant.codes</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
