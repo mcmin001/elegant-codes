@@ -58,6 +58,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -77,31 +78,42 @@
             </exclusions>
             <scope>test</scope>
         </dependency>
+
         <!--aop-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
+
         <!--热部署-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <scope>runtime</scope>
         </dependency>
+
         <dependency>
             <artifactId>common-tool</artifactId>
             <groupId>com.elegant.codes</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <artifactId>elegant-common</artifactId>
             <groupId>com.elegant.codes</groupId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
         <dependency>
             <artifactId>elegant-service</artifactId>
             <groupId>com.elegant.codes</groupId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter -->
