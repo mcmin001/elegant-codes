@@ -32,6 +32,7 @@
         <module>elegant-service</module>
         <module>elegant-model</module>
         <module>elegant-tools</module>
+        <module>design-patterns</module>
     </modules>
 
     <dependencyManagement>
