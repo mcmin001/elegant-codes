@@ -3,10 +3,12 @@ package com.elegant.codes.web.controller;
 import com.elegant.codes.common.exception.ClientErrorCode;
 import com.elegant.codes.common.exception.ClientException;
 import com.elegant.codes.model.user.User;
+import com.elegant.codes.service.user.TestService;
 import io.swagger.annotations.ApiOperation;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,6 +24,9 @@ import java.net.URLEncoder;
 @RestController
 public class TestController {
     private static final Logger logger = LoggerFactory.getLogger(TestController.class);
+
+    @Autowired
+    private TestService testService;
 
     @ApiOperation("测试文件下载接口")
     @GetMapping(value = "/download")
@@ -57,4 +62,12 @@ public class TestController {
         user.setUserName("tom");
         throw new ClientException(ClientErrorCode.Code.PARAMS_ERROR.as("测试ClientException"));
     }
+
+    @ApiOperation("测试接口异常处理")
+    @GetMapping(value = "/test/exception")
+    public String exception(@RequestParam(name = "id", required = false) String id){
+        return testService.testException();
+    }
+
+
 }
