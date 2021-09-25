@@ -33,6 +33,7 @@
         <module>elegant-model</module>
         <module>elegant-tools</module>
         <module>design-patterns</module>
+        <module>elegant-tools/docker-client</module>
     </modules>
 
     <dependencyManagement>
