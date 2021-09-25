@@ -4,4 +4,6 @@ import com.elegant.codes.model.user.User;
 
 public interface UserService {
     public void save(User user);
+
+    User findById(String userId);
 }
