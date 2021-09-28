@@ -16,7 +16,8 @@ public class SnowFlakeUUIDgenerator extends UUIDGenerator{
 
     public static String getUUID(){
         SnowFlakeUUIDgenerator var = getInstance();
-        System.out.println("SnowFlakeUUIDgenerator hashCode=" + var.hashCode());
+        logger.info("fff");
+        //System.out.println("SnowFlakeUUIDgenerator hashCode=" + var.hashCode());
         return var.genUUID();
     }
 
