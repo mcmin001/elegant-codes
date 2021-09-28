@@ -13,9 +13,9 @@ public class UUIDUtil {
     public static String getUUID(String className){
         switch (className){
             case DEFAULT_UUID_GENERATOR:
-                return SnowFlakeUUIDgenerator.getUUID();
+                return SnowFlakeUUIDgenerator.genUUID();
             default:
-                return SnowFlakeUUIDgenerator.getUUID();
+                return SnowFlakeUUIDgenerator.genUUID();
         }
     }
 
