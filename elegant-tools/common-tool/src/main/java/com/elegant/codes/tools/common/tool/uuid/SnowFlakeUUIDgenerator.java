@@ -12,6 +12,12 @@ public class SnowFlakeUUIDgenerator{
     }
 
     private SnowFlakeUUIDgenerator(long workerId, long datacenterId){
+        if (workerId > maxWorkerId || workerId < 0) {
+            throw new IllegalArgumentException(String.format("worker Id can't be greater than %d or less than 0", maxWorkerId));
+        }
+        if (datacenterId > maxDatacenterId || datacenterId < 0) {
+            throw new IllegalArgumentException(String.format("datacenter Id can't be greater than %d or less than 0", maxDatacenterId));
+        }
         this.workerId = workerId;
         this.datacenterId = datacenterId;
     }
@@ -114,10 +120,7 @@ public class SnowFlakeUUIDgenerator{
         // 上次生成ID的时间截
         lastTimestamp = timestamp;
         // 移位并通过或运算拼到一起组成64位的ID
-        return ((timestamp - twepoch) << timestampLeftShift) //
-                | (datacenterId << datacenterIdShift) //
-                | (workerId << workerIdShift) //
-                | sequence;
+        return ((timestamp - twepoch) << timestampLeftShift) | (datacenterId << datacenterIdShift) | (workerId << workerIdShift) | sequence;
     }
     /**
      * 阻塞到下一个毫秒，直到获得新的时间戳
