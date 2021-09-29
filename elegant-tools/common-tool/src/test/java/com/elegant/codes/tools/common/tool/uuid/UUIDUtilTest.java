@@ -3,6 +3,8 @@ package com.elegant.codes.tools.common.tool.uuid;
 
 import org.junit.Test;
 
+import java.util.Random;
+
 public class UUIDUtilTest{
     @Test
     public void uuidTest(){
@@ -20,5 +22,16 @@ public class UUIDUtilTest{
         long var3 = var1 << 1 | var2;
         System.out.println("var3=" + var3);
         System.out.println("var3 in binary=" + Long.toBinaryString(var3));
+    }
+
+    @Test
+    public void javaRandomTest(){
+        double var = Math.random();
+        System.out.println("Math.random=" + var);
+
+        Random random = new Random();
+        System.out.println("Random=" + random.nextInt());
+
+        long timestampRandom = System.currentTimeMillis();
     }
 }
