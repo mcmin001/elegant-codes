@@ -12,4 +12,13 @@ public class UUIDUtilTest{
         String v = "110001100011000011100100100010011101111111010100000000000000";
         System.out.println("fuck=" + v.length());
     }
+
+    @Test
+    public void testBinary(){
+        long var1 = 5;
+        int var2 = 1;
+        long var3 = var1 << 1 | var2;
+        System.out.println("var3=" + var3);
+        System.out.println("var3 in binary=" + Long.toBinaryString(var3));
+    }
 }
