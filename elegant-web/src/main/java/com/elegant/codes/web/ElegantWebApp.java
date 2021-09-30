@@ -12,6 +12,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.elegant.codes.model")
 public class ElegantWebApp {
     public static void main(String[] args) {
+        // 同时支持代理 HTTP/HTTPS 请求
+        System.setProperty("proxyHost", "127.0.0.1");
+        System.setProperty("proxyPort", "9876");
         SpringApplication.run(ElegantWebApp.class, args);
     }
 }

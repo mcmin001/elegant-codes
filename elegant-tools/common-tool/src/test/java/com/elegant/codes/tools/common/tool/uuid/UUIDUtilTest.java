@@ -25,6 +25,22 @@ public class UUIDUtilTest{
     }
 
     @Test
+    public void timestampTest(){
+        long timestamp = System.currentTimeMillis();
+        String binary = Long.toBinaryString(timestamp);
+        System.out.println("the timestamp of this moment is " + timestamp +
+                "\nand binary=" + binary + "\nand the length of binary=" + binary.length());
+    }
+
+    @Test
+    public void longToBinaryTest(){
+        long var = 40;
+        String varBinary = Long.toBinaryString(var);
+        System.out.println("The binary of " + var + " is " + varBinary +
+                "\nand the length of binary is " + varBinary.length());
+    }
+
+    @Test
     public void javaRandomTest(){
         double var = Math.random();
         System.out.println("Math.random=" + var);
@@ -33,5 +49,13 @@ public class UUIDUtilTest{
         System.out.println("Random=" + random.nextInt());
 
         long timestampRandom = System.currentTimeMillis();
+    }
+
+    @Test
+    public void printZero(){
+        int num = 12;
+        for(int i=0;i<num;i++){
+            System.out.print(0);
+        }
     }
 }
