@@ -1,5 +1,6 @@
 package com.elegant.codes.web.controller;
 
+import com.elegant.codes.common.annotation.DDLAnnotationScanner;
 import com.elegant.codes.common.exception.ClientErrorCode;
 import com.elegant.codes.common.exception.ClientException;
 import com.elegant.codes.model.user.User;
@@ -15,10 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.URLEncoder;
 
 @RestController
@@ -67,6 +65,18 @@ public class TestController {
     @GetMapping(value = "/test/exception")
     public String exception(@RequestParam(name = "id", required = false) String id){
         return testService.testException();
+    }
+
+    @GetMapping(value = "/test/annotation")
+    public String annotation(@RequestParam(name = "id", required = false) String id){
+        try {
+            DDLAnnotationScanner.generateSQL("com.elegant");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return "";
     }
 
 
